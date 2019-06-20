@@ -88,9 +88,15 @@ axios.get("http://www.omdbapi.com/?t=jaws&apikey=trilogy")
 
 .then (
   function(response){
-    console.log("what we got back from ombd", response.data.Title);
-    console.log("what we got back from ombd", response.data.Year);
-    console.log("The movie's rating is: " + response.data.imdbRating);
+    // console.log("what we got back from ombd", response.data.Title); e.g. string containing the show data we print out to the console
+    console.log("The movie's title is: " + response.data.Title);
+    console.log("The movie was released in the year: " + response.data.Year);
+    console.log("IMBD rated the movie", response.data.imbdRating);
+    console.log("Rotten Tomatoes rated the movie: " + response.data.Ratings[1].value);
+    console.log("The movie was filmed in: " + response.data.Country);
+    console.log("The movie is in this language: " + response.data.Language);
+    console.log("The plot goes like this: " + response.data.Plot);
+    console.log("The actors consist of: " + response.data.Actors);
   }
 )
 .catch(function(error) {
