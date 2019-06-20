@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+tc
 var keys = require("./keys");
 var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
@@ -97,3 +97,4 @@ axios.get("http://www.omdbapi.com/?t=jaws&apikey=trilogy")
 }; 
 // the thing that makes it go
 // movieStuff ();
+
