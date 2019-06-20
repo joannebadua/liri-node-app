@@ -48,8 +48,24 @@ axios.get("http://www.omdbapi.com/?t=jaws&apikey=trilogy")
   function(response){
     console.log("what we got back from ombd", response.data.Title);
     console.log("what we got back from ombd", response.data.Year);
+    console.log("The movie's rating is: " + response.data.imdbRating);
   }
 )
+.catch(function(error) {
+  if (error.response) {
+    console.log("---------------Data---------------");
+    console.log(error.response.data);
+    console.log("---------------Status---------------");
+    console.log(error.response.status);
+    console.log("---------------Status---------------");
+    console.log(error.response.headers);
+  } else if (error.request) {
+    console.log(error.request);
+  } else {
+    console.log("Error", error.message);
+  }
+  console.log(error.config);
+});
 
 }; 
 // the thing that makes it go
