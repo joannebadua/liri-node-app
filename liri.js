@@ -1,19 +1,36 @@
 require("dotenv").config();
-tc
 var keys = require("./keys");
-var spotify = new Spotify(keys.spotify);
+
 var axios = require("axios");
 var fs = require("fs");
 var inquirer = require("inquirer");
 var Spotify = require('node-spotify-api');
 
+var spotify = new Spotify(keys.spotify);
 
 console.log(process.argv, "what we type in terminal");
 var commands = process.argv[2]
-var title = process.argv[3]
-console.log(commands, title)
+var userInput = process.argv[3]
+console.log(commands, userInput)
 
-var spotify = new Spotify(keys.spotify);
+
+function liribotWork () {
+  switch (command) {
+    case "concert-this":
+    bandStuff();
+    break;
+    case "spotify-this-song":
+    spotifyStuff ();
+    break;
+    case "movie-this":
+    movieStuff ();
+    break;
+    case "do-what-it-says":
+    miscStuff ();
+    break;
+  }
+  }
+liribotWork ();
 
 function spotifyStuff () {
   spotify
