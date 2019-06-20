@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 var keys = require("./keys");
-
+var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
 var fs = require("fs");
 var inquirer = require("inquirer");
@@ -24,9 +24,22 @@ function spotifyStuff () {
     console.log(response.tracks);
   })
   .catch(function(err) {
-    console.log(err);
-  });
-};
+    // console.log(err); this is a test
+    if(error.response){
+      console.log("~~~~~~Data~~~~");
+      console.log(error.response.data);
+      console.log("~~~~Status~~~");
+      console.log(error.response.status);
+      console.log("~~~~Headers~~~");
+      console.log(error.response.headers);
+    } else if (error.resquest) {
+      console.log(error.request);
+    } else {
+      console.log("Error", error.message);
+    }
+    console.log(error.config);
+    }
+  )};
 
 function bandStuff () {
 axios.get("https://rest.bandsintown.com/artists/" + "digablePlanets" + "/events?app_id=codingbootcamp")
@@ -37,8 +50,22 @@ axios.get("https://rest.bandsintown.com/artists/" + "digablePlanets" + "/events?
     console.log("what we got back from spotify", response.data[0].venue.name);
   }
 )
-
-};
+.catch(function(error){
+  if(error.response){
+    console.log("~~~~~~Data~~~~");
+    console.log(error.response.data);
+    console.log("~~~~Status~~~");
+    console.log(error.response.status);
+    console.log("~~~~Headers~~~");
+    console.log(error.response.headers);
+  } else if (error.resquest) {
+    console.log(error.request);
+  } else {
+    console.log("Error", error.message);
+  }
+  console.log(error.config);
+  }
+)};
 // bandStuff ();
 
 function movieStuff (){
