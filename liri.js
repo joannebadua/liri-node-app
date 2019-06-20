@@ -13,10 +13,8 @@ var commands = process.argv[2]
 var title = process.argv[3]
 console.log(commands, title)
 
-var spotify = new Spotify({
-  id: "55499f1c409f4404aaa1d9b52e318f12",
-  secret: "5698115edc194b749a3ba9bd9a583469"
-});
+var spotify = new Spotify(keys.spotify);
+
 function spotifyStuff () {
   spotify
   .search({ type: 'track', query: 'All the Small Things', limit: 5})
