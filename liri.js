@@ -1,9 +1,13 @@
-var keys = require("./keys.js");
+require("dotenv").config();
+
+var keys = require("./keys");
 
 var axios = require("axios");
 var fs = require("fs");
 var inquirer = require("inquirer");
 var Spotify = require('node-spotify-api');
+
+
 console.log(process.argv, "what we type in terminal");
 var commands = process.argv[2]
 var title = process.argv[3]
