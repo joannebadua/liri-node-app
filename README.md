@@ -1,6 +1,6 @@
 # LIRI Bot
 
-<video src="https://youtu.be/CwSIgbelS0Y" width="320" height="200" controls preload></video>
+https://youtu.be/CwSIgbelS0Y
 
 ## Instructions
 Language Interpretation and Recognition Interface ("LIRI bot") is a low-key, powerful robot similar to iPhone's SIRI. LIRI bot takes in one of the following commands:
