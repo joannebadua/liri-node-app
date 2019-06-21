@@ -8,7 +8,7 @@ var Spotify = require('node-spotify-api');
 
 var spotify = new Spotify(keys.spotify);
 
-console.log(process.argv, "what we type in terminal");
+// console.log(process.argv, "what we type in terminal");
 var command = process.argv[2]
 var userInput = process.argv[3]
 console.log(command, userInput)
@@ -62,12 +62,21 @@ function spotifyStuff () {
   // )};
 };
 function bandStuff () {
-axios.get("https://rest.bandsintown.com/artists/" + "userInput" + "/events?app_id=codingbootcamp")
+axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp")
 
 .then (
   function(response){
-    // console.log("what we got back from spotify", response. data);
-    console.log("what we got back from bandsintown", response.data[0].venue.name);
+    // console.log(response.data[0]);
+    // console.log(response.data[1]);
+    // console.log(response.data[2]);
+    // console.log(response.data[1].offers);
+    console.log("The concert will be held at this venue: " + response.data[1].venue.name);
+    console.log("The venue is located in: " +response.data[1].venue.city + "," + response.data[1].venue.country);
+    console.log("The concert will take place on: " + response.data[1].datetime);
+    // console.log("what we got back from bandsintown", response.data[0].venue.name);
+
+    // console.log("what we got back from bandsintown", response.data[0].venue.city);
+    // console.log("what we got back from bandsintown", response.data[0].venue.datetime);
   })
 // .catch(function(error){
 //   if(error.response){
