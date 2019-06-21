@@ -68,24 +68,24 @@ axios.get("https://rest.bandsintown.com/artists/" + "digablePlanets" + "/events?
   function(response){
     // console.log("what we got back from spotify", response. data);
     console.log("what we got back from bandsintown", response.data[0].venue.name);
-  }
-)
-.catch(function(error){
-  if(error.response){
-    console.log("~~~~~~Data~~~~");
-    console.log(error.response.data);
-    console.log("~~~~Status~~~");
-    console.log(error.response.status);
-    console.log("~~~~Headers~~~");
-    console.log(error.response.headers);
-  } else if (error.resquest) {
-    console.log(error.request);
-  } else {
-    console.log("Error", error.message);
-  }
-  console.log(error.config);
-  }
-)};
+  })
+// .catch(function(error){
+//   if(error.response){
+//     console.log("~~~~~~Data~~~~");
+//     console.log(error.response.data);
+//     console.log("~~~~Status~~~");
+//     console.log(error.response.status);
+//     console.log("~~~~Headers~~~");
+//     console.log(error.response.headers);
+//   } else if (error.resquest) {
+//     console.log(error.request);
+//   } else {
+//     console.log("Error", error.message);
+//   }
+//   console.log(error.config);
+//   }
+// )
+};
 // bandStuff ();
 
 function movieStuff (){
@@ -102,24 +102,22 @@ axios.get("http://www.omdbapi.com/?t=jaws&apikey=trilogy")
     console.log("The movie is in this language: " + response.data.Language);
     console.log("The plot goes like this: " + response.data.Plot);
     console.log("The actors consist of: " + response.data.Actors);
-  }
-)
-.catch(function(error) {
-  if (error.response) {
-    console.log("---------------Data---------------");
-    console.log(error.response.data);
-    console.log("---------------Status---------------");
-    console.log(error.response.status);
-    console.log("---------------Status---------------");
-    console.log(error.response.headers);
-  } else if (error.request) {
-    console.log(error.request);
-  } else {
-    console.log("Error", error.message);
-  }
-  console.log(error.config);
-});
-
+  })
+// .catch(function(error) {
+//   if (error.response) {
+//     console.log("---------------Data---------------");
+//     console.log(error.response.data);
+//     console.log("---------------Status---------------");
+//     console.log(error.response.status);
+//     console.log("---------------Status---------------");
+//     console.log(error.response.headers);
+//   } else if (error.request) {
+//     console.log(error.request);
+//   } else {
+//     console.log("Error", error.message);
+//   }
+//   console.log(error.config);
+// });
 }; 
 // the thing that makes it go
 // movieStuff ();
