@@ -62,7 +62,7 @@ function spotifyStuff () {
   // )};
 };
 function bandStuff () {
-axios.get("https://rest.bandsintown.com/artists/" + "digablePlanets" + "/events?app_id=codingbootcamp")
+axios.get("https://rest.bandsintown.com/artists/" + "userInput" + "/events?app_id=codingbootcamp")
 
 .then (
   function(response){
@@ -89,7 +89,7 @@ axios.get("https://rest.bandsintown.com/artists/" + "digablePlanets" + "/events?
 // bandStuff ();
 
 function movieStuff (){
-axios.get("http://www.omdbapi.com/?t=jaws&apikey=trilogy") 
+axios.get("http://www.omdbapi.com/?t=" + userInput + "&apikey=trilogy") 
 
 .then (
   function(response){
@@ -122,7 +122,10 @@ axios.get("http://www.omdbapi.com/?t=jaws&apikey=trilogy")
 
 function miscStuff () {
   fs.readFile("random.txt", "utf-8", function(err, data){
-    console.log("this is what came back", err, data);
+    console.log("this is what came back", err, data.split(","));
+    command = data.split(",")[0];
+    userInput = data.split(",")[1];
+    liribotWork();
   })
 }
 // the thing that makes it go
