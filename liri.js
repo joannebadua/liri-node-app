@@ -119,6 +119,12 @@ axios.get("http://www.omdbapi.com/?t=jaws&apikey=trilogy")
 //   console.log(error.config);
 // });
 }; 
+
+function miscStuff () {
+  fs.readFile("random.txt", "utf-8", function(err, data){
+    console.log("this is what came back", err, data);
+  })
+}
 // the thing that makes it go
 // movieStuff ();
 
